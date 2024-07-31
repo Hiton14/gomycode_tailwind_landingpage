@@ -13,34 +13,43 @@
     <nav class="bg-gray-800 p-4 fixed top-0 w-full shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl font-bold"><img src="images/gaming.png" alt="logo"
-                    class="object-cover w-20 h-20 inset-0 bg-gradient-to-r from-black from-2%" /></a>
-            <div class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow sm:block">
+                    class="object-cover w-20 h-20" /></a>
+            <div class="hidden md:flex">
                 <a href="#home" class="mx-4 text-xl font-bold hover:text-blue-400">Home</a>
+                <a href="#consoles" class="mx-4 text-xl font-bold hover:text-blue-400">Consoles</a>
                 <a href="#games" class="mx-4 text-xl font-bold hover:text-blue-400">Games</a>
-                <a href="#products" class="mx-4 text-xl font-bold hover:text-blue-400">Deals</a>
                 <a href="#support" class="mx-4 text-xl font-bold hover:text-blue-400">Support</a>
             </div>
-            <div class="sm:hidden">
-                <button type="button"
-                    class="hs-collapse-toggle relative size-7 flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
-                    id="hs-navbar-example-collapse" aria-expanded="false" aria-controls="hs-navbar-example"
-                    aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-example">
-                    <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" x2="21" y1="6" y2="6" />
-                        <line x1="3" x2="21" y1="12" y2="12" />
-                        <line x1="3" x2="21" y1="18" y2="18" />
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button class="outline-none mobile-menu-button">
+                    <svg class="w-6 h-6 text-gray-500 hover:text-green-500" x-show="!showMenu" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
-                    <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
-                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 6 6 18" />
-                        <path d="m6 6 12 12" />
-                    </svg>
-                    <span class="sr-only">Toggle navigation</span>
                 </button>
             </div>
+        </div>
+        <!-- mobile menu -->
+        <div class="hidden mobile-menu">
+            <ul class="">
+                <li class="active">
+                    <a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a>
+                </li>
+                <li>
+                    <a href="#consoles"
+                        class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Consoles</a>
+                </li>
+                <li>
+                    <a href="#games"
+                        class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Games</a>
+                </li>
+                <li>
+                    <a href="#support"
+                        class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Support</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
@@ -59,13 +68,12 @@
             <p class="text-lg md:text-xl mb-8 font-bold">
                 Discover the latest games, add-ons, and more
             </p>
-            <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Shop
-                Now</a>
+            <a href="#games" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Shop Now</a>
         </div>
     </section>
 
     <!-- Featured playstation Section -->
-    <section id="games" class="py-16">
+    <section id="consoles" class="py-16">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8 text-center">
                 Featured Playstation consoles
@@ -100,7 +108,7 @@
     </section>
 
     <!-- Product Section -->
-    <section id="products" class="py-16 bg-gray-900">
+    <section id="games" class="py-16 bg-gray-900">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8 text-center">Play station Games</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -197,6 +205,15 @@
             </div>
         </div>
     </footer>
+    <script>
+        // JavaScript to toggle the mobile menu
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
 </body>
 
 </html>
